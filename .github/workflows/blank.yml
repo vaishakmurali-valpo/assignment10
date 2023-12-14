@@ -28,3 +28,7 @@ jobs:
           echo "running script"
           chmod 777 ./create_vm.sh
           sh create_vm.sh
+
+# If required, use the Cloud Run url output in later steps
+      - name: Show Output
+        run: echo "created VM Instance"
