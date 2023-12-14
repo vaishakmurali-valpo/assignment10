@@ -1,5 +1,5 @@
 #!/bin/bash
-# create vm instance -11
+# create vm instance
 RANDOM_NUMBER=$((RANDOM % 9000 + 1000))
 INSTANCE_NAME="vm-${RANDOM_NUMBER}"
 gcloud compute instances create $INSTANCE_NAME --project=vaishakmurali-prj --zone=us-central1-a --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=us-central1-subnet --maintenance-policy=MIGRATE --provisioning-model=STANDARD --service-account=179652072775-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server,https-server --create-disk=auto-delete=yes,boot=yes,device-name=instance-10,image=projects/debian-cloud/global/images/debian-11-bullseye-v20231212,mode=rw,size=10,type=projects/vaishakmurali-prj/zones/us-central1-a/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
